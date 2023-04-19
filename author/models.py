@@ -12,9 +12,13 @@ class Category(models.Model):
         return self.name
 
 class Author(models.Model):
+    
+    def nameFile(instance, filename):
+        return '/'.join(['pdfs', str(instance.title), filename])
+    
     owner = models.ForeignKey(to=User, on_delete=models.CASCADE)
     title = models.CharField(max_length=30)
     body = models.TextField(max_length=300)
     summary = models.CharField(max_length=60)
-    documents = models.FileField(upload_to='doc/', validators=[validate_file_extension])
+    documents = models.FileField(upload_to=nameFile, validators=[validate_file_extension], blank=True)
     categories = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
