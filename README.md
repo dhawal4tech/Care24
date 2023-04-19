@@ -12,8 +12,12 @@ Admin Users are seeded using this cmd it create users but it gives error option 
 
 Run Server using cmd "python manage.py runserver"
 
-Open local Server in Browser "http://127.0.0.1:8000" swagger documentation provided. (admin credentitals [username='dhawalp', password='David@932'])
+Open local Server in Browser "http://127.0.0.1:8000" swagger documentation is used for documentation of APIs provided.
 
-First Register User after registration Login to get bearer token ( Login using username, Registerations extra fields can be add from admin )
+For admin login use this credentials or create new superuser (admin credentitals [username='dhawalp', password='David@932'])
 
-Then use bearer token to login and you can create, update, partial update, delete, search using query to get searched record.
+First Register User after registration Login to get bearer token ( Login using email and password )
+
+Then use bearer token to perform crud operatios and you can create, update, partial update, delete, search using query to get searched record.
+
+For search use "http://127.0.0.1:8000/api/author?search=text" to search data.
