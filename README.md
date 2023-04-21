@@ -1,23 +1,62 @@
-# Care24 - content_management_system
+# Care24 - Content Management System
+Care24 is a content management system built with Django and Django REST framework. It provides a set of RESTful API's to manage authors and their books.
 
-Clone the git repository or download zipfile and extract in the project folder.
+## Installation
 
-Create Virtual Environment using cmd "python -m venv venv"
+1. Clone the git repository or download the zip file and extract it in the project folder.
 
-Active Environment using cmd "venv\Scripts\activate.bat"
+2. Create a virtual environment using the following command:
+ ```
+ python -m venv venv
+```
+3. Activate the virtual environment using the following command:
+```
+venv\Scripts\activate.bat
+```
+4. Install all packages using the following command or run next if first one gives errors:
+```
+pip install -r requirements.txt
+```
+```
+pip install django djangorestframework drf-yasg django-filter PyJWT
+```
 
-Install all packages using cmd "pip install -r requirements.txt" or run this cmd "pip install django djangorestframework drf-yasg django-filter PyJWT"
 
-Admin Users are seeded using this cmd it create users but it gives error option it run directly using below cmd (python manage.py seed authentication --number=2 --seeder "User.password" "David@932")
+## Usage
+1. Seed admin users using this command: (Note: This cmd can create admin users, but it may also encounter errors. You can skip it and proceed to the next step.)
+```
+python manage.py seed authentication --number=2 --seeder "User.password" "David@932"
+```
+2. Run the server using the following command:
+```
+python manage.py runserver
+```
+3. Open the local server in your browser: (Swagger documentation is used to document the provided APIs.)
+```
+http://127.0.0.1:8000
+```
+4. For admin login, use the following credentials or create a new superuser: [email='dhawalp@gmail.com', password='David@932']
+```
+http://127.0.0.1:8000/admin
+```
+5. To begin, register a user. Then, log in to obtain a bearer token. (To log in, enter your email address and password.).
+```
+http://127.0.0.1:8000/register
+http://127.0.0.1:8000/login
+```
+7. Next, use the bearer token to carry out CRUD operations. This includes creating, updating, partially updating, deleting, and searching for records using a query.
+```
+http://127.0.0.1:8000/api/author
+http://127.0.0.1:8000/api/author/1
+```
+8. To perform a search, use the following URL:
+```
+http://127.0.0.1:8000/api/author?search=text
+```
 
-Run Server using cmd "python manage.py runserver"
 
-Open local Server in Browser "http://127.0.0.1:8000" swagger documentation is used for documentation of APIs provided.
+## License
+Care24 is released under the MIT License. See LICENSE for more information.
 
-For admin login use this credentials or create new superuser (admin credentitals [email='dhawalp@gmail.com', password='David@932'])
-
-First Register User after registration Login to get bearer token ( Login using email and password )
-
-Then use bearer token to perform crud operatios and you can create, update, partial update, delete, search using query to get searched record.
-
-For search use "http://127.0.0.1:8000/api/author?search=text" to search data.
+## Credits
+This project was built by Dhawal Patel.
