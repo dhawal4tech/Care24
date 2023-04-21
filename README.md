@@ -6,7 +6,7 @@ Create Virtual Environment using cmd "python -m venv venv"
 
 Active Environment using cmd "venv\Scripts\activate.bat"
 
-Install all packages using cmd "pip install -r requirements.txt" or run this cmd "pip install django djangorestframework drf-yasg django-filter jwt"
+Install all packages using cmd "pip install -r requirements.txt" or run this cmd "pip install django djangorestframework drf-yasg django-filter PyJWT"
 
 Admin Users are seeded using this cmd it create users but it gives error option it run directly using below cmd (python manage.py seed authentication --number=2 --seeder "User.password" "David@932")
 
