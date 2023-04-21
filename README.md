@@ -59,4 +59,4 @@ http://127.0.0.1:8000/api/author?search=text
 Care24 is released under the MIT License. See LICENSE for more information.
 
 ## Credits
-This project was built by Dhawal Patel.
+This project was built by Dhawal Panchal.
