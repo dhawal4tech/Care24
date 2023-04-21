@@ -11,10 +11,9 @@ class AuthorList(ListCreateAPIView):
 
     serializer_class = AuthorSerializer
     permission_classes = (permissions.IsAuthenticated,)
-    filter_backends = [DjangoFilterBackend, filters.SearchFilter]
+    filter_backends = [filters.SearchFilter]
 
-    filterset_fields = ['id', 'title', 'body', 'summary', 'categories']
-    search_fields = ['id', 'title', 'body', 'summary', 'categories']
+    search_fields = ['id', 'title', 'body', 'summary', 'documents']
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
