@@ -21,4 +21,4 @@ class Author(models.Model):
     body = models.TextField(max_length=300)
     summary = models.CharField(max_length=60)
     documents = models.FileField(upload_to=nameFile, validators=[validate_file_extension], blank=False)
-    categories = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
+    categories = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True)
