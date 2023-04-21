@@ -30,7 +30,7 @@ class LoginView(GenericAPIView):
 
         if user:
             auth_joken = jwt.encode({'email': user.email}, settings.JWT_SECRET_KEY)
-            serializers = UserSerializer(user)
+            serializers = LoginSerializer(user)
             data = {'user': serializers.data, 'token': auth_joken}
             return Response(data, status=status.HTTP_200_OK)
 
