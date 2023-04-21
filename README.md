@@ -14,7 +14,7 @@ Run Server using cmd "python manage.py runserver"
 
 Open local Server in Browser "http://127.0.0.1:8000" swagger documentation is used for documentation of APIs provided.
 
-For admin login use this credentials or create new superuser (admin credentitals [username='dhawalp', password='David@932'])
+For admin login use this credentials or create new superuser (admin credentitals [email='dhawalp@gmail.com', password='David@932'])
 
 First Register User after registration Login to get bearer token ( Login using email and password )
 
