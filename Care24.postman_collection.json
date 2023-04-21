@@ -1,0 +1,174 @@
+{
+	"info": {
+		"_postman_id": "79feef7a-1813-4802-bfbd-9c18faf34066",
+		"name": "Care24",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24501456"
+	},
+	"item": [
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\": \"havish\",\r\n    \"last_name\": \"shah\",\r\n    \"password\": \"David@932\",\r\n    \"email\": \"havishs@gmail.com\",\r\n    \"phone\": \"098765\",\r\n    \"address\": \"Vikhroli East\",\r\n    \"city\": \"Mumbai\",\r\n    \"state\": \"Gujrat\",\r\n    \"country\": \"India\",\r\n    \"pin_code\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Author",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRoYXdhbHBAZ21haWwuY29tIn0.hmmeygWAqEvjCW6yDGqfblO-8P47DhkUNCyU3Fcx974",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "Third Content",
+							"type": "text"
+						},
+						{
+							"key": "body",
+							"value": "Body of content",
+							"type": "text"
+						},
+						{
+							"key": "summary",
+							"value": "summary of content",
+							"type": "text"
+						},
+						{
+							"key": "documents",
+							"type": "file",
+							"src": "/D:/Jigar/Resumes/J!G@R.pdf"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/author/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"author",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"dhawalp@gmail.com\",\r\n    \"password\": \"David@932\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Auther",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRoYXdhbHBAZ21haWwuY29tIn0.hmmeygWAqEvjCW6yDGqfblO-8P47DhkUNCyU3Fcx974",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/author?search=third",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"author"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "third"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
